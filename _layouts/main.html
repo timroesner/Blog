@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div style="position: absolute; width: 100%; min-height: 100vh;">
+            <div class="header" onclick="location.href='/';" style="cursor: pointer;">
+                Tim Roesner's Blog
+            </div>
+            {{ content }}
+            <div class="footer">
+                    <span> &copy;
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                        <a href="https://timroesner.com">Tim Roesner</a>
+                    </span>
+                    <a href="https://twitter.com/timroesner">
+                        <img src="/assets/images/twitter.png" alt="twitter" style="height: 15px; width: auto; color"/>
+                    </a>
+            </div>
+        </div>
+    </body>
+</html>
