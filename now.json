@@ -4,5 +4,8 @@
   "alias": ["blog.timroesner.com", "www.blog.timroesner.com"],
   "builds": [
     { "src": "build.sh", "use": "@now/static-build", "config": { "distDir": "_site" } }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1.html" }
   ]
 }
