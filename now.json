@@ -6,7 +6,6 @@
     { "src": "build.sh", "use": "@now/static-build", "config": { "distDir": "_site" } }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/404.html", "status": 404 }
+    { "src": "/(.*)", "dest": "/$1.html" }
   ]
 }
