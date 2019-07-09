@@ -2,6 +2,7 @@
 layout: post
 title: Moving to Jekyll hosted on Zeit Now
 permalink: new-blog-new-infra 
+image: construction.jpg
 ---
 
 I moved my blog, again. But this time I also switched out the underlying framework. Previously I was using Ghost and hosted on Heroku. Before I go in depth into the how I moved, I wanted to point out some pain points I had and why I moved in the first place. 
