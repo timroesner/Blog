@@ -15,6 +15,24 @@ layout: main
         </p>
     </div>
     {{ content }}
+
+    {%- if page.previous -%}
+    <h2 style="margin-top: 3rem">Next Post:</h2>
+    <div class="post-card" onclick="location.href='{{ page.previous.url | relative_url }}'" style="cursor: pointer; width: calc(100% - 2rem); margin: 1rem 0 2rem 0;" >
+        {%- if page.previous.image -%}
+            <img class="post-card-image" src="/assets/images/{{ page.previous.image }}" alt="next-post"/>
+        {%- endif -%}
+        <h3 style="word-wrap: break-word; margin-block-end: 0.5rem; margin-block-start: 0;">
+            {{ page.previous.title | escape }}
+        </h3>
+        <footer style="color: #007AFF;">
+            <time datetime="{{ page.previous.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                    {{ page.previous.date | date: date_format }}
+            </time>
+        </footer>
+    </div>
+    {%- endif -%}
 </div>
 
 <script>
