@@ -54,7 +54,7 @@ code {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding-bottom: 60px;
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
     align-content: flex-start;
     justify-content: center;
     margin: 4rem 0 0 0;
