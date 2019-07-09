@@ -16,9 +16,6 @@ layout: main
                     {{ post.date | date: date_format }}
             </time>
         </footer>
-        {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-        {%- endif -%}
     </div>
     {%- endfor -%}
 </div>

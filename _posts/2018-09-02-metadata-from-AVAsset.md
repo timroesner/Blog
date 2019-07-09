@@ -15,7 +15,9 @@ With the help of AVFoundation you are able to access this data in your iOS and m
 
 ## 1.
 Fetch the metadata from your asset like this:
-`let metadata = asset.metadata(forFormat: AVMetadataFormatiTunesMetadata)`
+```swift
+let metadata = asset.metadata(forFormat: AVMetadataFormatiTunesMetadata)
+```
 
 ## 2. 
 Access the desired field with `keySpace` and `key`
@@ -47,9 +49,9 @@ Extract the metadata field you like:
 **Note**: *Most of these are stored as strings*
 ```swift
 let titleItems = AVMetadataItem.metadataItems(from: metadata, withKey: "©nam", keySpace: "itsk")
-            if let data = titleItems.first, let title = data.stringValue {
-                print(title)
-            }
+if let data = titleItems.first, let title = data.stringValue {
+    print(title)
+}
 ```
     
 ## 3.1
@@ -58,7 +60,10 @@ The iTunMOVI field is a little harder, as it is a .plist which you first have to
 let extendedInfo = AVMetadataItem.metadataItems(from: metadata, withKey: "com.apple.iTunes.iTunMOVI", keySpace: "itlk")
 if let first = extendedInfo.first {
     do {
-        let plistData = try PropertyListSerialization.propertyList(from: first.stringValue?.data(using: .utf8) ?? Data(), options: .mutableContainersAndLeaves, format: nil) as! [String:AnyObject]
+        let plistData = try PropertyListSerialization.propertyList(
+            from: first.stringValue?.data(using: .utf8) ?? Data(), 
+            options: .mutableContainersAndLeaves, format: nil
+        ) as! [String:AnyObject]
 
         print(plistData["cast"].map({$0.value(forKey: "name")}) as? [String] ?? [])
         print(plistData["directors"].map({$0.value(forKey: "name")}) as? [String] ?? [])

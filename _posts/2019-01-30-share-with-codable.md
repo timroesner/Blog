@@ -28,7 +28,11 @@ Next we will need to convert our struct into a dictionary. For that we will exte
 extension Encodable {
     func asDictionary() throws -> [String: Any] {
         let data = try JSONEncoder().encode(self)
-        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+        guard let dictionary = try JSONSerialization.jsonObject(
+            with: data, 
+            options: .allowFragments
+        ) as? [String: Any] 
+        else {
             throw NSError()
         }
         return dictionary
@@ -62,12 +66,13 @@ Now we can present the UIActivityViewController with the function we just wrote.
 ```swift 
 @IBAction func share() {
     guard let url = exportToFileURL(note: currentNote) else {
-            return
+        return
     }
 
     let activityViewController = UIActivityViewController(
         activityItems: ["You can add some text or other items here", url],
-        applicationActivities: nil)
+        applicationActivities: nil
+    )
     present(activityViewController, animated: true, completion: nil)
 }
 ```
@@ -82,7 +87,7 @@ func importData(from url: URL) -> Note? {
         let data = try? JSONSerialization.data(withJSONObject: noteInfo, options: .prettyPrinted),
         let note = try? JSONDecoder().decode(Note.self, from: data)
     else {
-            return nil
+        return nil
     }
     
     // Add the new note to your persistent storage here

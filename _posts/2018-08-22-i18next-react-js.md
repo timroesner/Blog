@@ -48,7 +48,9 @@ Next you will create json files for your translations. I’ve decided to put the
 }
 ```
 As you can see I am making use of the build in pluralization of i18next, this is especially useful if you don’t know which will be used until runtime. Here is a code example showing this functionality:
-i18n.t('group', {count: numberOfGroups})  
+```javascript
+i18n.t('group', {count: numberOfGroups})
+```
 
 ### Connecting
 If you are using HOCs it’s best to inject the translations, as this allows you to change the language on the fly. I also happen to use redux, so most of my components are already encapsulated, but that’s no problem as we can simply encapsulate these wrapped components as well. Here is what it looks like when you export your HOC:
@@ -66,7 +68,7 @@ After you connected your component you will be able to access your translations 
 ```javascript
 this.props.t('blog_title')
 ```
-**Note**: *For convince use* const { t } = this.props  
+**Note**: *For convince use* `const { t } = this.props`  
   
 
 ### Standalone
