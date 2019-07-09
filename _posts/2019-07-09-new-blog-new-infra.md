@@ -49,7 +49,7 @@ In order to get the deploy working correctly you need two things. First a build 
   
  
 ### build.sh
-```
+```json
 yum install ruby23-devel.x86_64
 
 gem install jekyll bundler
@@ -60,7 +60,7 @@ jekyll build
 ```
 
 ### now.json
-```json
+```js
 {
   "version": 2,
   "name": "my-blog",
