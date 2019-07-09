@@ -37,7 +37,7 @@ code {
 
 .progress-container {
     position: fixed;
-    z-index: 20;
+    z-index: 9;
     width: 100%;
     height: 5px;
     margin-top: 3.5rem;
