@@ -92,7 +92,7 @@ code {
     right: 0;
     margin: auto;
     margin-top: 4rem;
-    padding-bottom: 60px;
+    padding-bottom: calc(3rem + env(safe-area-inset-bottom));
     width: calc(100% - 2rem);
     max-width: 800px;
 }
@@ -130,6 +130,12 @@ code {
         width: 260px;
     }
 
+    .footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 1000px;
+    }
+
     .post-title {
         font-size: 3rem;
     }
@@ -145,6 +151,16 @@ code {
         margin-top: 5rem;
         left: 0;
         right: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer {
+        max-width: 1500px;
+    }
+
+    .post {
+        max-width: 1100px;
     }
 }
 
