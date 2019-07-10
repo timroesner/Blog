@@ -7,12 +7,12 @@ image: construction.jpg
 
 I moved my blog, again. But this time I also switched out the underlying framework. Previously I was using Ghost and hosted on Heroku. Before I go in depth into the how I moved, I wanted to point out some pain points I had and why I moved in the first place. 
 
-Heroku: 
+**Heroku:**
 - Startup time on site access
 - Couldn't setup custom domain
 - No static storage for images
 
-Ghost:
+**Ghost:**
 - Painful upgrade process
 - Layout issues
 - Too much bulk (Database, Node.js, etc)
@@ -40,6 +40,8 @@ When it comes to the design of your blog you already have a default theme called
 However if you want to create a completely custom look with your own CSS, you can do so as well. For that you create a folder called `_layouts` in which you can put your HTML templates. Here is a good [tutorial](https://jekyllrb.com/docs/layouts/) that goes over how it all works.
 
 Another important directory that you should create is `assets`. Here you can put subfolders for images or stylesheets, which will be part of your generated site and accessible under the same path. 
+
+Another advantage of Jekyll are [variables](https://jekyllrb.com/docs/variables/), which allow you to access things you set in the front matter or site / page specific stuff. This helped me a lot as I was building the template for my main page, as it allowed me to loop over all posts. 
 
 You can test your site locally with the command `$ jekyll serve`. It sadly does not offer auto reload out of the box, but a simply `cmd + R` will show you the changes you made.
 
@@ -77,7 +79,7 @@ jekyll build
 The alias is the custom URL of my blog, in order to have this work you need to [add your domain to your Zeit account](https://zeit.co/docs/v2/domains-and-aliases/adding-a-domain).  
 Furthermore I use the permalink feature in Jekyll to shorten the URLs, in order for this to work I needed to add a custom route in my now.json that fetches the correct HTML file. 
 
-### Summary
+## Summary
 Overall I'm very happy with my new setup. I was able to remove the pain points I had, and made my blog much faster and easier to maintain. I have a lot more control over things now, which allowed me to support automatic dark mode switching, and use my custom layouts. So far only advantages with this new setup. 
 
 
