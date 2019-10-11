@@ -32,8 +32,8 @@ Since SF Symbols are embedded into the system font, they can be used on any devi
 
 When you install the SF Symbols app it will automatically install the needed fonts as well, which means you can use them in your favorite design tools, like Photoshop, Sketch, Figma, etc.
 
-I started using these new Symbols in an app that supports iOS 12 and below. I achieved this by copying the symbol and embedding it into a text layer in a Sketch Artboard. I then exported it as a PDF to Xcode and can use it like any other image asset. 
-This also allowed me to adjust the size, color, and weight as needed.
+I started using these new Symbols in an app that supports iOS 12 and below. I achieved this by copying the symbol and embedding it into a text layer in a Sketch Artboard. I then exported it as a PDF to Xcode and can use it like any other image asset. Make sure to check the `Use as template` box, so it automatically adjust to the tintColor.
+This method also allowed me to adjust the size, color, and weight as needed.
 
 Here is a screenshot of the same icon that I created above in code, as Sketch Artboard:
 ![Sketch SF Symbols](./assets/images/SketchSFSymbols.png)
