@@ -10,7 +10,7 @@ Xcode 11 is now publicly available and with it come over 1500 unique symbols, de
 To explore all icons and find the right one, I highly recommend using the [SF Symbols App](https://developer.apple.com/design/downloads/SF-Symbols.dmg) from Apple. Below you can see a screenshot of it:
 ![SF Symbols App](./assets/images/SFSymbolsApp.png)
 
-### Usage
+## Usage
 Once you picked the string identifier, it's time to add the symbol to your Swift project. UIKit introduced a new UIImage initializer that helps us with this: 
 ```swift
 let shareIcon = UIImage(systemName: "square.and.arrow.up")
@@ -27,7 +27,7 @@ There are multiple initializers available for the SymbolConfiguration, so I enco
 
 If you used these new methods in a project that does not target iOS 13+ you might have noticed, that the compiler will throw an error telling you that they are only available starting with iOS 13. 
 
-### iOS 12 and below
+## iOS 12 and below
 Since SF Symbols are embedded into the system font, they can be used on any device, that has the latest version of the font installed. iOS 12 unfortunately has very poor font management, and even on Mojave or earlier you will occasionally see "􀀀" instead of your symbol.
 
 When you install the SF Symbols app it will automatically install the needed fonts as well, which means you can use them in your favorite design tools, like Photoshop, Sketch, Figma, etc.
