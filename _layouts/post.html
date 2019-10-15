@@ -5,17 +5,18 @@ layout: main
      <div class="progress-bar" id="scroll-bar"></div>
 </div> 
 <div class="post">
-    <div style="text-align: center; margin-top: 5rem;">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <p class="date">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                    {{ page.date | date: date_format }}
-            </time>
-        </p>
+    <div id="post-content">
+        <div style="text-align: center; margin-top: 5rem;">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <p class="date">
+                <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                        {{ page.date | date: date_format }}
+                </time>
+            </p>
+        </div>
+        {{ content }}
     </div>
-    {{ content }}
-
     {%- if page.previous -%}
     <h2 style="margin-top: 3rem">Next Post:</h2>
     <div class="post-card" onclick="location.href='{{ page.previous.url | relative_url }}'" style="cursor: pointer; width: calc(100% - 2rem); margin: 1rem 0 2rem 0;" >
@@ -39,8 +40,8 @@ layout: main
     window.onscroll = function() {didScroll()};
 
     function didScroll() {
-        var winScroll = document.body.scrollTop;
-        var height = document.body.scrollHeight - document.documentElement.clientHeight;
+        var winScroll = Math.max(document.body.scrollTop - 90, 0);
+        var height = document.getElementById("post-content").scrollHeight - document.documentElement.clientHeight;
         var scrolled = (winScroll / height) * 100;
         document.getElementById("scroll-bar").style.width = scrolled + "%";
     }
