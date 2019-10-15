@@ -25,11 +25,10 @@ imageView.tintColor = .systemBlue
 ```
 There are multiple initializers available for the SymbolConfiguration, so I encourage you to use the one fitting for your needs.
 
-If you used these new methods in a project that does not target iOS 13+ you might have noticed, that the compiler will throw an error telling you that they are only available starting with iOS 13. 
-
-
 ## iOS 12 and below
-Since SF Symbols are embedded into the system font, they can be used on any device, that has the latest version of the font installed. iOS 12 unfortunately has very poor font management, and even on Mojave or earlier you will occasionally see "�" instead of your symbol.
+If you used these new methods in a project that does not target iOS 13+ you might have noticed, that the compiler will throw an error telling you that they are only available starting with iOS 13. Currently there is no direct way to initialize an UIImage with a symbol in code, in iOS 12 or below.
+
+However since SF Symbols are embedded into the system font, they can be used on any device, that has the latest version of the font installed. iOS 12 unfortunately has very poor font management, and even on Mojave or earlier you will occasionally see "�" instead of your symbol.
 
 When you install the SF Symbols app it will automatically install the needed fonts as well, which means you can use them in your favorite design tools, like Photoshop, Sketch, Figma, etc.
 
@@ -61,5 +60,7 @@ enum SymbolName: String {
 This is just a small subset of the over 1600 symbols. You will likely not use all of them in your project, so adding them while you go along is probably your best bet.  
 
 ### Summary
-Looking for icons to use in your project has always been a struggle for indie developers. It's great that we now get so many Apple designed resources to use, scalabled to many sizes and weights. No more paying fees or worrying about seperate licenses for your icons. 
-Unfortunatly the overhead for adding icons to iOS 12 and below is much larger than for iOS 13. It might be a little while longer before most projects will target iOS 13, but once they do, it opens up a lot more possibilities.
+Looking for icons to use in your project has always been a struggle for indie developers. It's great that we now get so many Apple designed assets, freely scalabled in sizes and weights. No more paying fees or worrying about seperate licenses for your icons. 
+Unfortunatly there is more overhead to add these icons to iOS 12 and below, but as described in the section above even that is very well possible, and doesn't differ from the way you use custom assets now. 
+However one area where SF Symbols are significantly lagging is transit icons. 
+Overall I'm seeing this as a big benefit to many smaller developers, who do not have the bandwidth to design custom icons for everything.
