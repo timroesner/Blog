@@ -16,10 +16,11 @@ a {
     color: inherit;
 }
 
-code {
+code.highlighter-rouge {
     padding: 0 5px 2px;
     font-size: 1rem;
     font-weight: 400 !important;
+    color: black;
     background: #e5eff5;
     border-radius: 3px
 }
