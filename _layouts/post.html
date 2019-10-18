@@ -37,10 +37,10 @@ layout: main
 </div>
 
 <script>
-    window.onscroll = function() {didScroll()};
+    window.onscroll = function() { didScroll() };
 
     function didScroll() {
-        var winScroll = Math.max(document.body.scrollTop - 90, 0);
+        var winScroll = Math.max(document.body.scrollTop - 90, document.documentElement.scrollTop);
         var height = document.getElementById("post-content").scrollHeight - document.documentElement.clientHeight;
         var scrolled = (winScroll / height) * 100;
         document.getElementById("scroll-bar").style.width = scrolled + "%";
