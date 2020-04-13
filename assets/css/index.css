@@ -25,6 +25,10 @@ code.highlighter-rouge {
     border-radius: 3px
 }
 
+.comment {
+    display: initial ! important;
+}
+
 .header {
     padding: 1rem 0 1rem 1rem;
     background-color: #7f7f7f;
