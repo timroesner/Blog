@@ -29,7 +29,7 @@ There are four different Pointer Style effects: `.automatic`, `.highlight`, `.li
 
 In addition to the `targetedPreview` the `.hover` style also takes three more parameters (`preferredTintMode: TintMode, prefersShadow: Bool, prefersScaledContent: Bool`), which can be used to customize the appearance further. In the following illustration you can see all the different effects in action.
 
-<img src="./assets/images/UIPointerInteractions/UIButton.gif" alt="UIButton GIF" style="width:400px ! important;"/>
+<img src="./assets/images/UIPointerInteractions/UIButton.gif" alt="UIButton GIF" style="width:400px ! important; max-width:100%;"/>
 
 If you look closely you'll notice that the lift effect changes appearance depending on the size of the `targetedPreview`. This is in line with the guidance that Apple gave in their HIG around [Pointer Interactions](https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/pointers/). We'll also be looking at how to customize the shape of the pointer, but before we'll be looking at how to add these interactions to a subclass of `UIView`.
 
@@ -59,7 +59,7 @@ extension YourViewController: UIPointerInteractionDelegate {
 The delegate method behaves the same as the `pointerStyleProvider` of UIButton, but is implemented at the ViewController level rather then the individual view level. It's also very important to set `isUserInteractionEnabled = true` as the pointer interaction will not be visible otherwise.  
 You can then return a `UIPointerStyle`, with the same constraints and effects as in the `UIButton` example above. In this `UIImageView` example we again use the `.lift` effect as we're dealing with an opaque view. UIKit automatically decides if it should hide the cursor, based on the size of the view. Unfortunately it is not documented when exactly this switch takes places, nor if it depends on area, or just height / width. Here is an illustration of an Image View with the `.lift` effect again in small and large:
 
-<img src="./assets/images/UIPointerInteractions/UIImageView.gif" alt="UIImageView GIF" style="width:400px ! important;"/>
+<img src="./assets/images/UIPointerInteractions/UIImageView.gif" alt="UIImageView GIF" style="width:400px ! important; max-width:100%;"/>
 
 ## UIPointerShape
 In addition to the `UIPointerStyle` effect we can also customize the shape of the pointer. Again we have four enum cases that are available: `.roundedRect`, `.horizontalBeam`, `.verticalBeam`, `.path`. They have different associated values which determine the look of the cursor. Here are some examples:
@@ -88,7 +88,7 @@ return UIPointerStyle(shape: .path(paperplanePath))
 For converting the SVG path to a UIBezierPath I'm using [this implementation](https://github.com/timrwood/SVGPath) from Tim Wood. Important to note is that we have to offset the shape by 10.0 in both x and y direction. Otherwise the pointer will visual be at x:0, y:0 of the path, resulting in weird jumps between the default pointer and this custom shape.  
 Here are these examples in action:
 
-<img src="./assets/images/UIPointerInteractions/UIPointerShape.gif" alt="UIPointerShape GIF" style="width:400px ! important;"/>
+<img src="./assets/images/UIPointerInteractions/UIPointerShape.gif" alt="UIPointerShape GIF" style="width:400px ! important; max-width:100%;"/>
 
 ## UIContextMenu
 Context menus have been introduced in iOS 13.0 as part of Mac Catalyst, but are now also accessible through a right mouse click on iPad. In order for the pointer on iPad to interact with the Context Menu correctly we have to provide a `UITargetedPreview` through one of the optional delegate methods of `UIContextMenuInteractionDelegate`:
@@ -107,7 +107,7 @@ let contextMenuInteraction = UIContextMenuInteraction(delegate: self)
 contextMenuButton.addInteraction(contextMenuInteraction)
 ```
 Here is an example of such a context menu in combination with the iPad pointer:  
-<img src="./assets/images/UIPointerInteractions/UIContextMenu.gif" alt="UIContextMenu GIF" style="width:400px ! important;"/>
+<img src="./assets/images/UIPointerInteractions/UIContextMenu.gif" alt="UIContextMenu GIF" style="width:400px ! important; max-width:100%;"/>
 
 
 ## UIHoverGesture
@@ -130,7 +130,7 @@ Within our handler we can then implement the custom behavior we want, in this ex
 ```
 
 Here is this hover in action:  
-<img src="./assets/images/UIPointerInteractions/UIHoverGesture.gif" alt="UIHoverGesture GIF" style="width:400px ! important;"/>
+<img src="./assets/images/UIPointerInteractions/UIHoverGesture.gif" alt="UIHoverGesture GIF" style="width:400px ! important; max-width:100%;"/>
 
 
 ## Sample App
