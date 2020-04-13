@@ -23,9 +23,9 @@ highlightedButton.pointerStyleProvider = { (button, effect, shape) in
 ```
 There are four different Pointer Style effects: `.automatic`, `.highlight`, `.lift`, `.hover`. The guidance on when to use what is as following:
 
->- Use highlight for a small element that has a transparent background.  
->- Use lift for a small element that has an opaque background.  
->- Use hover for large elements and customize the scale, tint, and shadow attributes as needed.
+- Use highlight for a small element that has a transparent background.  
+- Use lift for a small element that has an opaque background.  
+- Use hover for large elements and customize the scale, tint, and shadow attributes as needed.
 
 In addition to the `targetedPreview` the `.hover` style also takes three more parameters (`preferredTintMode: TintMode, prefersShadow: Bool, prefersScaledContent: Bool`), which can be used to customize the appearance further. In the following illustration you can see all the different effects in action.
 
