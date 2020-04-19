@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="alternate" type="application/rss+xml" title="Tim Roesner’s Blog" href="/feed.xml">
         <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-okaidia.min.css" rel="stylesheet" async/>
     </head>
 
     <body>
@@ -21,9 +22,14 @@
                         </script>
                         <a href="https://timroesner.com">Tim Roesner</a>
                     </span>
-                    <a href="https://twitter.com/timroesner" style="width: 60px; text-align: right;">
-                        <img src="/assets/images/twitter.png" alt="twitter-icon" style="height: 15px; width: auto;"/>
-                    </a>
+                    <div style="width: calc(2*26px); display: flex; justify-content: space-between;">
+                        <a type="application/rss+xml" href="/feed.xml" title="RSS feed">
+                            <img src="/assets/images/rss.png" alt="rss-icon" style="height: 15px; width: auto;" />
+                        </a>
+                        <a href="https://twitter.com/timroesner" title="Tim's Twitter profile">
+                            <img src="/assets/images/twitter.png" alt="twitter-icon" style="height: 15px; width: auto;" />
+                        </a>
+                    </div>
             </div>
         </div>
     </body>

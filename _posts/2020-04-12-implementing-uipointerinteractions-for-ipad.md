@@ -135,4 +135,4 @@ Here is this hover in action:
 
 ## Sample App
 If you want to try out all of these interactions for yourself you can clone [my sample project](https://github.com/timroesner/pointer-interactions) from GitHub. It contains all the code from the examples plus it allows you to interact with the standard UIKit elements, so you can get a feel, if you need to replicate behavior for your custom components.  
-![Sample App Screenshot](./assets/images/UIPointerInteractions/SampleApp.png)
+![Sample App Screenshot](./assets/images/UIPointerInteractions/SampleApp.jpg)
