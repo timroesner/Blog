@@ -24,6 +24,13 @@ url: "https://blog.timroesner.com" # the base hostname & protocol for your site,
 # Build settings
 markdown: kramdown
 
+# Plugins
+plugins:
+  - jekyll-feed
+title: Tim Roesner’s blog
+description: Welcome to my blog
+author: Tim Roesner
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
