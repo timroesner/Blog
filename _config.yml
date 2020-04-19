@@ -27,7 +27,7 @@ markdown: kramdown
 # Plugins
 plugins:
   - jekyll-feed
-title: Tim Roesner’s blog
+title: Tim Roesner’s Blog
 description: Welcome to my blog
 author: Tim Roesner
 
