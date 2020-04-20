@@ -13,7 +13,7 @@ I highly recommend setting up a separate UITests target for these automated scre
 Once that is done, we'll want to to add a new `XCTestplan` to this target. We can either use the Xcode menu `Product > Test Plan > New Test Plan` or from the scheme editor we ca select the `Convert to use Test Plans` option. If you chose the former you want to make sure to add the new target under the `Test` tab.
 Since we only want to configure the language setting we can leave all Shared Settings untouched, and simply add a new configuration for each language we support. Here is what this would look like for an app that supports three languages:  
 
-![XCTestplan configuration]("./assets/images/TestPlanConfig.png")
+![XCTestplan configuration](./assets/images/TestPlanConfig.png)
 
 And that's all we need to setup our XCTestplan.
 
@@ -33,7 +33,7 @@ func testScreenshots() {
     
     let firstResult = app.cells.firstMatch
     firstResult.tap()
-    waitForDisappearing(of: keyboard)
+    waitForDisappearance(of: keyboard)
     add(takePromoShot(name: "Result"))
 }
 ```
@@ -45,7 +45,7 @@ func waitForExistence(of element: XCUIElement) {
 	waitForExpectations(timeout: 5.0, handler: nil)
 }
 
-func waitForDisappearing(of element: XCUIElement) {
+func waitForDisappearance(of element: XCUIElement) {
 	let predicate = NSPredicate(format: "exists == FALSE")
 	expectation(for: predicate, evaluatedWith: element, handler: nil)
 	waitForExpectations(timeout: 5.0, handler: nil)
@@ -76,7 +76,7 @@ This will set the status bar as it appears in Apple's marketing images. Unfortun
 ## Extracting Screenshots
 Now we are at a point where we can run our screenshot UI test. Once those have passed we can look at the results in the `Report Navigator` within Xcode. Here you should see your test, which expands in all the different language configurations and then into the test procedure. Our screenshot attachments are marked with little paperclips and we can open them with QuickLook.
 
-![Test results]("./assets/images/TestResults.png")
+![Test results](./assets/images/TestResults.png)
 
 It can get very tedious to save each screenshot individually, especially when we have many languages. Unfortunately these attachments to not exists as png or jpg files within our test results, another change that came with Xcode 11. However we can parse the test results and find json that leads us to the actual attachments and extract these. The best way to do so is with [xcparse](https://github.com/ChargePoint/xcparse). It can be installed through homebrew and we can then extract our screenshots as follows:
 ```
