@@ -85,5 +85,5 @@ xcparse screenshots /path/to/Test.xcresult /path/to/outputDirectory
 
 There are additional flags you can set if you want them to be grouped by device, OS, or even test plan configuration. But since we already prefix them with the language identifier they can easily be ordered by name.  
 
-## Summary
+## Summary 
 This approach of automating screenshots already paid off and saved me valuable time, especially when new device dimensions become required for screenshots, or when major parts of the UI change. At WWDC20 I would really like to see devices added as part of the XCTestplan configurations, until then we have to select these manually, or use a script that iterates through the ones that are required for AppStore screenshots. 
