@@ -2,7 +2,7 @@
 layout: post
 title: "Starting your iOS Design System"
 permalink: starting-ios-design-system
-image: frame-system.jpeg
+image: frame-system.jpg
 ---
 
 A Design System is a way to ensure that different screens of your app look consistent. This is very important if you have a big app with many screens, but even for smaller projects that are maintained over a long period, a Design System is useful especially when adding new features.
