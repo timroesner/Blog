@@ -198,6 +198,7 @@ Primitives are patterns or views that can stand on their own and be reused for m
 These Primitives are often very unique to your project and depend on your needs, which is why I'm not including specific code examples. In order to decide if a view is a Primitive or just a simple view, it's best to ask you the following questions:
 - Am I reusing this view in multiple places?
 - Is it independent from project specific models?  
+
 If the answer to both of these is `Yes` then chances are it belongs within the Primitives of your Design System.
 
 ## Summary
