@@ -40,7 +40,7 @@ Having these extensions on `CGFloat` and `UIEdgeInsets` then allows you to use t
 ![Margins Example](./assets/images/DesignSystem/Margins.jpeg)
 
 ### Text Styles
-Every app contains some text, which makes styling text an important component of your app. Most likely you're using `San Francisco` the default iOS font within your app, and you probably encountered the [default text styles](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography/#dynamic-type-sizes) that Apple offers. The great part about these are that they support Dynamic Type right out of the box, but I often found them to be too limiting. The following 12 text styles are the ones I regularly use, most of them come in a `Regular` and `Semibold` variant, making them versatile while still supporting Dynamic Type:
+Every app contains some text, which makes styling text an important component of your app. Most likely you're using `San Francisco` the default iOS font within your app, and you probably encountered the [default text styles](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography/#dynamic-type-sizes) that Apple offers. The great part about these are that they support Dynamic Type right out of the box, but I often found them to be too limiting. The following 11 text styles are the ones I regularly use, most of them come in a `Regular` and `Semibold` variant, making them versatile while still supporting Dynamic Type:
 
 ```swift
 extension UIFont {
@@ -80,13 +80,13 @@ extension UIFont {
 
 Apple provides us with `UIFontMetrics` based on their preferred font styles, they are responsible for the scaling factor of the dynamic font sizes. Since we don't want all of them growing at the same rate we base them off the closest Apple equivalent.  
 Another aspect is semantic naming of these text styles, so if we were to modify them in the future, for example their font weight, we don't need to change the naming as a result of it, since it reflects purpose and not style.   
-Here is what all of these text styles looks like:
+Here is what all of these text styles look like:
 
 ![Text Styles Example](./assets/images/DesignSystem/TextStyles.jpeg)  
 
 ### Colors
-The right color palette can be very important for an app. Often there is a brand color which is also reflected in the app icon, and within the tint color of important controls. Apple also has their own named colors within UIKit and added many dynamic colors with iOS 13 that adapt for light and dark mode. These already feel native to iOS and I highly recommend using these as much as possible. A list of [these dynamic colors can be found here](https://developer.apple.com/documentation/uikit/uicolor/ui_element_colors). 
-When it comes to adding your own colors you have multiple options. Most straight forward is to define a named color within an extension of `UIColor`:
+The right color palette can be very important for an app. Often there is a brand color which is also reflected in the app icon, and within the tint color of important controls. Apple also has their own named colors within UIKit and added many dynamic colors with iOS 13 that adapt for Light and Dark Mode. These already feel native to iOS and I highly recommend using them as much as possible. A list of [these dynamic colors can be found here](https://developer.apple.com/documentation/uikit/uicolor/ui_element_colors).  
+When it comes to adding your own colors you have multiple options. The most simple is to define colors within an extension of `UIColor`:
 
 ```swift
 extension UIColor {
@@ -96,8 +96,8 @@ extension UIColor {
 }
 ```
 
-This works great as a first building block, but unfortunately these colors will not adapt to a Dark Mode theme. Defining our colors within the asset catalog offers the option to add another appearance for Dark Mode. This is a great tool especially if you are using story boards or xibs.
-But if you assign most of your colors within code you have o rely on a string based API. That means typos are easy to make, and if you rename or remove a color, the compiler will not be able to help you, and your app will have unexpected behavior or worse: crash. That's why I prefer to define these within code.  
+This works great as a first building block, but unfortunately these colors will not adapt to a Dark Mode theme. Defining our colors within the asset catalog offers the option to add another appearance for Dark Mode. This is a great tool especially if you are using story boards or xibs.  
+But if you assign most of your colors within code you have to rely on a string based API. That means typos are easy to make, and if you rename or remove a color, the compiler will not be able to help you, and your app will have unexpected behavior or worse: crash. That's why I prefer to define these within code.  
 In order to add a secondary appearance of the color for Dark Mode, we'll make use of a Property Wrapper that will return us the right color depending on the theme: 
 
 ```swift
@@ -121,7 +121,7 @@ struct DynamicColor {
 }
 ```
 
-An added benefit of this Property Wrapper is that it works for projects that target iOS 12 or earlier, as the light color appearance serves as a fallback value. Additionally we can also add support for a custom Theme Manager in addition to the `UITraitCollection`, in case you want to offer the option to override the theme.
+An added benefit of this Property Wrapper is that it works for projects that target iOS 12 or earlier, as the light color appearance serves as a fallback value. Additionally we can also add support for a custom Theme Manager in addition to the `UITraitCollection`, in case you want to offer the option to override the theme.  
 Once we added this Property Wrapper to the codebase we can then define our colors as follows:
 
 ```swift
@@ -135,11 +135,11 @@ struct Theme {
 You'll notice that we can't define these dynamic colors within an extension of `UIColor` since those (currently) don't support Property Wrappers. If you still like to keep all your colors in one place, which you should, we can store them within a struct called `Theme`.
 
 ### Icons
-Icons are another important factor that determine the look of your app. Again Apple did us a huge favor with iOS 13 when they released SF Symbols, which I've [written about previously](/using-sf-symbols). However sometimes you don't find the right icon within these, or you support iOS 12 and will have to add a `PDF` version to the asset catalog anyways. Now more than ever it's important to select the template image option, as you are likely to change the tint color based on your theme. 
+Icons are another important factor that determine the look of your app. Again Apple did us a huge favor with iOS 13 when they released SF Symbols, which I've [written about previously](/using-sf-symbols).   However sometimes you don't find the right icon within these, or you support iOS 12 and have to add a `PDF` version to the asset catalog anyways. Now more than ever it's important to select the template image option, as you are likely to change the tint color based on your theme.   
 Similar to the color assets, image assets use string based APIs, which come with the same drawbacks when renaming or removing. To combat this issue and give us compile time assurance, we can create a Build Phase that creates code references to these image assets at compile time. Let me know if you are interested in how to achieve this and I can share the script I use to generate these in a separate post.
 
 ### Elevation
-Elevations refer to the shadow applied to a view to make it appear as if it is elevated from the page. Again we use an extension, this time on `UIView` and a custom enum type for our different levels, which also defines the offset, radius, and opacity for each:
+Elevations refer to the shadow applied to a view to make it appear as if it is elevated from the page. Again we use an extension, this time on `UIView` and a custom enum type for our different levels, which also defines the `offset`, `radius`, and `opacity` for each:
 
 ```swift
 public enum Elevation {
@@ -202,5 +202,5 @@ These Primitives are often very unique to your project and depend on your needs,
 If the answer to both of these is `Yes` then chances are it belongs within the Primitives of your Design System.
 
 ## Summary
-These are just the first steps you can take to create your own iOS Design System. Depending on your team size I highly recommend working together with a designer to get these principles in place. There are also some tools like [Zeplin]() that can help you to create a Design System from high fidelity mock ups produced with Figma, or Sketch. 
+These are just the first steps you can take to create your own iOS Design System. Depending on your team size I highly recommend working together with a designer to get these principles in place. There are also some tools like [Zeplin](https://zeplin.io) that can help you to retrieve colors, icons, and text styles from high fidelity mock ups produced with Figma, or Sketch. 
 Some Design Systems go even further and also include reusable animations, or other frequently used patters. If you already have a Design System in place I'm interested to hear what is included in yours.
