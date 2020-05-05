@@ -108,11 +108,12 @@ struct DynamicColor {
 
 	var wrappedValue: UIColor {
 		if #available(iOS 13.0, *) {
-			switch UITraitCollection.current.userInterfaceStyle {
-			case .dark:
-				return dark
-			case .light, .unspecified:
-				return light
+			return UIColor { (traitCollection) -> UIColor in
+				switch traitCollection.userInterfaceStyle {
+				case .dark: return self.dark
+				case .light, .unspecified: return self.light
+				@unknown default: return self.light
+				}
 			}
 		} else {
 			return light
