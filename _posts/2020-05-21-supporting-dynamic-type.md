@@ -50,7 +50,7 @@ private func metrics(for size: TextSize) -> UIFontMetrics {
 }
 ```
 
-The following code snippet then allows us to get a scaled UIFont with the `TextSize` and font weight we specify. If you haven’t imported your custom font, follow (these steps)[https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app]
+The following code snippet then allows us to get a scaled UIFont with the `TextSize` and font weight we specify. If you haven’t imported your custom font, follow [these steps](https://developer.apple.com/documentation/uikit/text_display_and_fonts/adding_a_custom_font_to_your_app)
 
 ```swift
 private enum RoobertWeight {
@@ -72,7 +72,11 @@ func font(with size: TextSize, weight: RoobertWeight) -> UIFont {
 }
 ```
 
-Once implemented, the code snippets above allow us to define a total of 12 text styles, all of which adhere to the Dynamic Font setting of the user. At Twitch, we put these snippets into an extension of UIFont, and we gave all 12 styles distinct names so that we can easily reuse them throughout our project. Here is an example of some of these:
+Once implemented, the code snippets above allow us to define a total of 12 text styles, all of which adhere to the Dynamic Font setting of the user. 
+
+![Twitch mobile text styles at three different font categories](./assets/images/supporting-dynamic-type/fontScaling.jpg)
+
+At Twitch, we put these snippets into an extension of UIFont, and we gave all 12 styles distinct names so that we can easily reuse them throughout our project. Here is an example of some of these:
 
 ```swift
 extension UIFont {
@@ -100,8 +104,6 @@ extension UIFont {
 ``` 
 
 The benefit of having distinct names for our fonts also means that communication between designers and engineers is easier as we have a shared language we can all use to communicate; these styles are available in both our design tool and our code, making them a part of our design system. While adding support for dynamic font sizing we also vetted the text styles that we previously used throughout the app and made sure they work with all sizes and hierarchy is maintained. Furthermore we optioned to use semantic names that convey intent instead of style properties, this will allow us to adjust these properties in the future without having to change the name of the text style.
-
-![Twitch mobile text styles at three different font categories](./assets/images/supporting-dynamic-type/fontScaling.png)
 
 ## And now?
 Adding support for Dynamic Type is normally not where the work stops, but starts. Maybe you are already localizing your app and have run into issues where labels are getting truncated. With dynamic font sizes you also have to keep in mind that text can grow vertically which can cause layout issues. You may need to add more Scroll Views, so that text at the largest sizes is still readable. Some layouts might break completely and need to be reworked. Below are some **best practices** that can help you tackle these newly created issues:  
