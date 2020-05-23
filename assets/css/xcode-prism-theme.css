@@ -20,13 +20,6 @@ code[class*="language-"] {
   hyphens: none;
 }
 
-@font-face { 
-  font-family: "SF Mono"; 
-  font-weight: 400; 
-  font-style: normal; 
-  src: url(file:///Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-Regular.otf);
-}
-
 pre[class*=language-] {
   padding:1em;
   margin:.5em 0;
@@ -71,17 +64,17 @@ pre[class*=language-] {
   color: #6c7986;
 }
 
-.token.punctuation {
-  color: #ebebeb;
+.token.punctuation,
+.token.operator {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .token.property,
 .token.tag,
-.token.number,
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #d0bf69;
+  color: #fc5fa3;
 }
 
 .token.char,
@@ -101,7 +94,6 @@ pre[class*=language-] {
   color: #D0A8FF;
 }
 
-.token.operator,
 .token.entity {
   color: #a167e6;
 }
