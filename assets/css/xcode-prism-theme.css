@@ -1,0 +1,133 @@
+pre[class*="language-"],
+code[class*="language-"] {
+  color: rgba(255, 255, 255, 0.85);
+  background: #1F1F24;
+  font-size: 1rem;
+  text-shadow: none;
+  font-family: "SF Mono", Menlo, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*=language-] {
+  padding:1em;
+  margin:.5em 0;
+  overflow:auto;
+  border-radius:.3em
+}
+
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"]::mozselection,
+code[class*="language-"]::mozselection {
+  text-shadow: none;
+  background: #515b70;
+}
+
+@media print {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+pre[class*=language-] {
+  padding:1em;
+  margin:.5em 0;
+  overflow:auto;
+  border-radius:.3em
+}
+
+/*********************************************************
+* Tokens
+*/
+
+.namespace {
+  opacity: .7;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6c7986;
+}
+
+.token.punctuation,
+.token.operator {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #fc5fa3;
+}
+
+.token.char,
+.token.number {
+  color: #D0BF69;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.inserted {
+  color: #FC6A5D;
+}
+
+.token.builtin {
+  color: #D0A8FF;
+}
+
+.token.entity {
+  color: #a167e6;
+}
+
+.token.url {
+  color: #5482FF
+}
+
+.token.atrule,
+.token.attr-value,
+.token.boolean,
+.token.keyword {
+  color: #fc5fa3;
+}
+
+.token.function {
+  color: #d0a8ff;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #fd8f3f;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}

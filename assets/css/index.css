@@ -18,10 +18,11 @@ a {
 
 code.highlighter-rouge {
     padding: 2px 5px 2px;
-    font-size: 1rem;
+    font-family: Menlo, monospace;
+    font-size: 0.8em;
     font-weight: 400 !important;
     color: black;
-    background: #e5eff5;
+    background: rgba(229, 239, 245, 0.8);
     border-radius: 3px
 }
 
@@ -178,10 +179,6 @@ code.highlighter-rouge {
     .footer {
         border-color: rgb(126, 126, 126);
         color: rgb(185, 184, 184);
-    }
-
-    code {
-        background-color: rgba(75, 78, 82);
     }
 
     .header {
