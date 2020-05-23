@@ -18,7 +18,8 @@ a {
 
 code.highlighter-rouge {
     padding: 2px 5px 2px;
-    font-size: 1rem;
+    font-family: Menlo, monospace;
+    font-size: 0.8em;
     font-weight: 400 !important;
     color: black;
     background: #e5eff5;

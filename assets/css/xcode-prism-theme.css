@@ -4,7 +4,7 @@ code[class*="language-"] {
   background: #1F1F24;
   font-size: 1rem;
   text-shadow: none;
-  font-family: monospace;
+  font-family: "SF Mono", Menlo, monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -18,6 +18,13 @@ code[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+}
+
+@font-face { 
+  font-family: "SF Mono"; 
+  font-weight: 400; 
+  font-style: normal; 
+  src: url(file:///Applications/Utilities/Terminal.app/Contents/Resources/Fonts/SFMono-Regular.otf);
 }
 
 pre[class*=language-] {
