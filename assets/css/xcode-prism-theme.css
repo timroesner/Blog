@@ -2,7 +2,7 @@ pre[class*="language-"],
 code[class*="language-"] {
   color: rgba(255, 255, 255, 0.85);
   background: #1F1F24;
-  font-size: 1em;
+  font-size: 1rem;
   text-shadow: none;
   font-family: monospace;
   direction: ltr;
