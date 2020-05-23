@@ -13,7 +13,7 @@ layout: main
         <footer style="color: #007AFF;">
             <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
                     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                    {{ post.date | date: date_format }}
+                    {{ post.date | date: '%b %-d, %Y' }}
             </time>
         </footer>
     </div>
