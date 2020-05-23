@@ -22,7 +22,7 @@ code.highlighter-rouge {
     font-size: 0.8em;
     font-weight: 400 !important;
     color: black;
-    background: #e5eff5;
+    background: rgba(229, 239, 245, 0.8);
     border-radius: 3px
 }
 
