@@ -26,6 +26,13 @@ code.highlighter-rouge {
     border-radius: 3px
 }
 
+blockquote {
+  border-left: 2px solid #bbb;
+  margin: 0;
+  padding: 0.25em 0.75em;
+  opacity: 0.75;
+}
+
 .comment {
     display: unset ! important;
 }
