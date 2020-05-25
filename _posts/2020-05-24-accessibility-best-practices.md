@@ -7,7 +7,7 @@ image: Accessibility-Header.svg
 
 Accessibility is an important corner stone of iOS development, as it enables all people to use your apps, no matter their abilities. Fortunately UIKit offers many APIs, which allow Developers to offer support for system technologies within their apps. Most of these technologies and APIs can be grouped into three categories:
 
-![Motor, Vision, and Hearing](./assets/images/Accessibility-Best-Pratices/Accessibility-Areas.svg)
+<img class="invert-on-dark" alt="Motor, Vision, and Hearing" src"./assets/images/Accessibility-Best-Pratices/Accessibility-Areas.svg" />
 
 Voice Control, or Switch Control are examples of technologies that help users with motor disabilities. VoiceOver and Dynamic Font help people with vision impairments. While haptics and closed captions help those with hearing loss. 
 

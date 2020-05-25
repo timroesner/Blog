@@ -214,4 +214,8 @@ th {
     .post-card:hover {
         background-color: rgb(71, 74, 76);
     }
+    
+    .invert-on-dark {
+    	filter: invert(100%);
+    }
 }
