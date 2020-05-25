@@ -2,7 +2,7 @@
 layout: post
 title: "Accessibility Best Practices"
 permalink: accessibility-best-practices
-image: Accessibility-Header.svg
+image: Accessibility-Header.png
 ---
 
 Accessibility is an important corner stone of iOS development, as it enables all people to use your apps, no matter their abilities. Fortunately UIKit offers many APIs, which allow Developers to offer support for system technologies within their apps. Most of these technologies and APIs can be grouped into three categories:
