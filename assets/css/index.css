@@ -33,6 +33,21 @@ blockquote {
   opacity: 0.75;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 0.5em;
+}
+
+th {
+  background-color: #eee;
+}
+
 .comment {
     display: unset ! important;
 }
