@@ -215,6 +215,10 @@ th {
         background-color: rgb(71, 74, 76);
     }
     
+    .date {
+    	color: #0984ff;
+    }
+    
     .invert-on-dark {
     	filter: invert(100%);
     }
