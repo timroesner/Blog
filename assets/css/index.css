@@ -16,16 +16,6 @@ a {
     color: inherit;
 }
 
-code.highlighter-rouge {
-    padding: 2px 5px 2px;
-    font-family: Menlo, monospace;
-    font-size: 0.8em;
-    font-weight: 400 !important;
-    color: black;
-    background: rgba(229, 239, 245, 0.8);
-    border-radius: 3px
-}
-
 blockquote {
   border-left: 2px solid #bbb;
   margin: 0;
