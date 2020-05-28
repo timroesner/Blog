@@ -134,7 +134,7 @@ Using `automaticDimension` for the Table View row height ensures that AutoLayout
 ### 4. Collection Views
 ```swift
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize { 
-...
+    ...
 }
 ```
 Unfortunately automatic cell sizing in Collection Views is a little harder to achieve than in Table Views, as these cells can have variable width and height. This topic alone could warrant another blog post and there are many good ones out there. At Twitch we often make the width of the cell static and then let it grow in height to accommodate its content. 

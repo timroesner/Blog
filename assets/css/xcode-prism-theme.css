@@ -20,6 +20,16 @@ code[class*="language-"] {
   hyphens: none;
 }
 
+code.highlighter-rouge {
+    padding: 2px 5px 2px;
+    font-family: Menlo, monospace;
+    font-size: 0.8em;
+    font-weight: 400 !important;
+    color: black;
+    background: rgba(229, 239, 245, 0.8);
+    border-radius: 3px
+}
+
 pre[class*=language-] {
   padding:1em;
   margin:.5em 0;
@@ -40,13 +50,6 @@ code[class*="language-"]::mozselection {
   code[class*="language-"] {
     text-shadow: none;
   }
-}
-
-pre[class*=language-] {
-  padding:1em;
-  margin:.5em 0;
-  overflow:auto;
-  border-radius:.3em
 }
 
 /*********************************************************

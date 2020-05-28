@@ -16,14 +16,13 @@ a {
     color: inherit;
 }
 
-code.highlighter-rouge {
-    padding: 2px 5px 2px;
-    font-family: Menlo, monospace;
-    font-size: 0.8em;
-    font-weight: 400 !important;
-    color: black;
-    background: rgba(229, 239, 245, 0.8);
-    border-radius: 3px
+h2, h3 {
+	margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+h2 + p, h3 + p {
+  margin-top: 0.5em;
 }
 
 blockquote {
@@ -31,6 +30,21 @@ blockquote {
   margin: 0;
   padding: 0.25em 0.75em;
   opacity: 0.75;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 0.5em;
+}
+
+th {
+  background-color: #eee;
 }
 
 .comment {
@@ -118,7 +132,7 @@ blockquote {
 .date {
     margin-top: -15px;
     margin-bottom: 2rem;
-    color: #007AFF;
+    color: #037AFC;
 }
 
 .footer {
@@ -198,5 +212,13 @@ blockquote {
 
     .post-card:hover {
         background-color: rgb(71, 74, 76);
+    }
+    
+    .date {
+    	color: #4693FE;
+    }
+    
+    .invert-on-dark {
+    	filter: invert(100%);
     }
 }
