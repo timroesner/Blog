@@ -16,6 +16,15 @@ a {
     color: inherit;
 }
 
+h2, h3 {
+	margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+h2 + p, h3 + p {
+  margin-top: 0.5em;
+}
+
 blockquote {
   border-left: 2px solid #bbb;
   margin: 0;

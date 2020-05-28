@@ -67,22 +67,22 @@ This array of properties defines the capabilities of an element. They are read t
 
 | Trait | Description |
 |---|---|
-| button | Treat element as button |
-| link | A tappable link, which brings the user to a website. These can be directly navigated through with the rotor. |
-| searchField | A search field |
-| image | A visual graphic. Should be used when the visual appearance conveys additional information. Can be combined with other traits. |
-| selected | Used to describe the state of an element. For example used for tab bar items. |
-| playsSound | Element plays a sound once the action is performed |
-| keyboardKey | Treat element as a keyboard key |
-| staticText | Text that cannot change |
-| summaryElement | Element provides summary information, which is read on first load. Each view may only have one summary element. |
-| notEnabled | Element is disabled and does not respond to user interaction. Read out as "dimmed". |
-| updatesFrequently | Element frequently updates its label or value. Makes sure that VoiceOver doesn't fall behind when reading updates. |
-| startsMediaSession | Causes VoiceOver to not read back the element when activated, so the sound can play without interruptions. |
-| adjustable | Allows adjustments through increment and decrement methods. Will append ", swipe up or down to adjust the value." to your hint. |
-| allowsDirectInteraction | Useful for drawing apps or other elements where interactions can not be controlled by VoiceOver. |
-| causesPageTurn | Element causes an automatic page turn when VoiceOver finished reading it |
-| header | Divides content into sections. These can be directly navigated through with the rotor. |
+| `button` | Treat element as button |
+| `link` | A tappable link, which brings the user to a website. These can be directly navigated through with the rotor. |
+| `searchField` | A search field |
+| `image` | A visual graphic. Should be used when the visual appearance conveys additional information. Can be combined with other traits. |
+| `selected` | Used to describe the state of an element. For example used for tab bar items. |
+| `playsSound` | Element plays a sound once the action is performed |
+| `keyboardKey` | Treat element as a keyboard key |
+| `staticText` | Text that cannot change |
+| `summaryElement` | Element provides summary information, which is read on first load. Each view may only have one summary element. |
+| `notEnabled` | Element is disabled and does not respond to user interaction. Read out as "dimmed". |
+| `updatesFrequently` | Element frequently updates its label or value. Makes sure that VoiceOver doesn't fall behind when reading updates. |
+| `startsMediaSession` | Causes VoiceOver to not read back the element when activated, so the sound can play without interruptions. |
+| `adjustable` | Allows adjustments through increment and decrement methods. Will append ", swipe up or down to adjust the value." to your hint. |
+| `allowsDirectInteraction` | Useful for drawing apps or other elements where interactions can not be controlled by VoiceOver. |
+| `causesPageTurn` | Element causes an automatic page turn when VoiceOver finished reading it |
+| `header` | Divides content into sections. These can be directly navigated through with the rotor. |
 
 ### accessibilityViewIsModal
 This is a boolean that should be set on a view that is presented modally on top of another. This is important because by default all elements on screen can be navigated to with VoiceOver. Setting this property to true tells VoiceOver to ignore elements that are not part of the view's hierarchy.
