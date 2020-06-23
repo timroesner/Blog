@@ -2,10 +2,10 @@
 layout: post
 title: "Building Widgets for iOS 14"
 permalink: building-widgets-ios14
-image: WidgetKit.png
+image: WidgetKit.svg
 ---
 
-*<p style="text-align:center;">This post discusses APIs and Software that is currently in beta and may change.</p>*
+<p style="text-align:center;font-style: italic;">This post discusses APIs and Software that is currently in beta and may change.</p>
 
 Apple just introduced iOS 14 and one of the major changes are Widgets coming to the iPhone home screen. This will be a flagship feature and users will expect your app to offer a Widget as well. So let's look at how you can build one for your own app. **Note:** Widgets can only be built with SwiftUI as they are archived to save performance. This also means you are unable to use UIKit views, even if they are wrapped in `UIViewRepresentbale`.
 
