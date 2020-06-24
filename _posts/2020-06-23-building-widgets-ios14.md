@@ -2,7 +2,7 @@
 layout: post
 title: "Building Widgets for iOS 14"
 permalink: building-widgets-ios14
-image: WidgetKit.svg
+image: WidgetKit.png
 ---
 
 <p style="text-align:center;font-style: italic;">This post discusses APIs and Software that are currently in beta and may change.</p>
