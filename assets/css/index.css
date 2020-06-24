@@ -196,7 +196,11 @@ th {
         color: white;
         background-color: black;
     }
-
+    
+    th {
+  		background-color: #111;
+	}
+	
     .footer {
         border-color: rgb(126, 126, 126);
         color: rgb(185, 184, 184);
