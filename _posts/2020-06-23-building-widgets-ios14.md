@@ -103,23 +103,23 @@ struct NextFlightWidgetView: View {
     }
 }
 ```
-Again the actual Widget views have to be pure SwiftUI, so you're not able to wrap UIKit views in `UIViewRepresentable` otherwise you'll encounter crashes when the system tries to create your view from an archive.  
-
+ 
 ### Caveats 
-Currently not all SwiftUI views can be used within Widgets, that is due to the static nature and the use of KeyArchiver to render these. Currently these are not (yet) document, but was told in a lab that documention will be coming soon. until then here is a (incomplete) list of views that CANNOT be used in Widgets:  
+Widget views have to be pure SwiftUI, so you're not able to wrap UIKit views in `UIViewRepresentable` otherwise you'll encounter crashes when the system tries to create your view from an archive.   
+
+Furthermore not all SwiftUI views can be used within Widgets, that is due to the static nature and the use of KeyArchiver to render these. Currently these are not (yet) document, but was told in a lab that documentation will be coming soon. Until then here is a (incomplete) list of views that CANNOT be used in Widgets:  
 - List 
 - ScrollView
 - Switches
 - ProgressView
-
-Further more other dynamic views like the new `Map` component in SwiftUI need to be made static. We can achieve this with the help of `MKMapSnapshotter`.
+Other dynamic views like the new `Map` component in SwiftUI need to be made static. We can achieve this with the help of `MKMapSnapshotter`.
 
 ## Interaction
-Let's talk about how you can open your app at the right point after a user taps on your Widget. SwiftUI now has two new properties that we can make use of for. First the `widgetURL` modifier:
+Let's talk about how you can open your app at the right point after a user taps on your Widget. SwiftUI now has two new properties that we can make use of for this in particular. First the `widgetURL` modifier:
 ```swift
 .widgetURL(URL(string: "flight-status://widget/\(flight.ID)"))
 ```
-With this modifier applied to our Widget view we can specify a deep link URL that will be passed to our app. In my case I'm passing the flight ID in order to open the app with the next flight details. This is the only way we can specify links for `small` Widgets. For `medium` and `large` we can have multiple tap target, each of which is associated with it's own URL through the new `Link` struct:
+With this modifier applied to our Widget view we can specify a deep link URL that will be passed to our app. In my case I'm passing the flight ID in order to open the app with the next flight details. Only one `widgetURL` can exist per view hierarchy, and this is the only way we can specify links for `small` Widgets, as all other will be ignored. For `medium` and `large` Widgets we can have multiple tap target, each of which is associated with its own URL through the new `Link` struct:
 ```swift
 Link(destination: URL(string: "flight-status://widget/\(flight.ID)")!) {
     // Your View here
