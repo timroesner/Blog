@@ -145,5 +145,5 @@ struct WidgetPreviews: PreviewProvider {
 }
 ```
 
-Here is what the UI of adding your Widget will then look like:
+Here is what the UI of adding your Widget will then look like:  
 <img src="./assets/images/Widgets/AddWidget.jpeg" alt="Add Flight Widget" style="width:400px ! important; max-width:100%;"/>
