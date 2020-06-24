@@ -111,7 +111,8 @@ Furthermore not all SwiftUI views can be used within Widgets, that is due to the
 - List 
 - ScrollView
 - Switches
-- ProgressView
+- ProgressView  
+
 Other dynamic views like the new `Map` component in SwiftUI need to be made static. We can achieve this with the help of `MKMapSnapshotter`.
 
 ## Interaction
