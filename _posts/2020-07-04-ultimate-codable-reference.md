@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Swift Codable Reference"
-permalink: swift-codable-reference
+title: "Swift: Decode JSON with Codable"
+permalink: swift-decode-json-codable
 image: binary-encoded.jpg
 ---
 
