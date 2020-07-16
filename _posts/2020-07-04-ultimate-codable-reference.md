@@ -6,7 +6,7 @@ image: binary-encoded.jpg
 ---
 
 Codable is a protocol that has been introduced with Swift 4 and makes encoding and decoding data models to and from JSON significantly easier. In this reference I will discuss how to use it to decode different types of JSON, and what steps you can take if your data model and JSON don't perfectly line up.  
-
+ 
 ## JSON to Data Model
 First let's look at decoding some JSON that matches our data model almost exactly:
 ```json
