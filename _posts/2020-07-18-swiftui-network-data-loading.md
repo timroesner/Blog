@@ -13,12 +13,14 @@ First we will leverage `URLSession` and the new Publisher API to load and transf
 ```swift
 import Combine
 
-func loadStores(from url: URL) -> AnyPublisher<[AppleStore], Error> {
-	URLSession.shared.dataTaskPublisher(for: url)
-		.receive(on: RunLoop.main)
-		.map({ $0.data })
-		.decode(type: AppleStore.self, decoder: JSONDecoder())
-		.eraseToAnyPublisher()
+enum DataLoader {
+	static func loadStores(from url: URL) -> AnyPublisher<[AppleStore], Error> {
+		URLSession.shared.dataTaskPublisher(for: url)
+			.receive(on: RunLoop.main)
+			.map({ $0.data })
+			.decode(type: AppleStore.self, decoder: JSONDecoder())
+			.eraseToAnyPublisher()
+	}
 }
 ```
 
@@ -57,7 +59,10 @@ class DataManager: ObservableObject {
 }
 ```
 
-Let's step through what this class will accomplish for us. First we make this class an `ObservableObject`, this will allow us to define it as a `@StateObject` within SwiftUI, more to that later. Then we declare the appleStore property as `@Published`, this is very important, as otherwise SwiftUI will not update its View Hierarchy when the contents of the array change. Next we have a `Cancellable` token, this needs to be stored at the class level in order to hold onto our request and make sure it doesn't go away before the request is finished. This is true for any Combine Publisher. Within our `loadStores` function we first cancel any unfinished requests, this is in case the user requests to load multiple times. We also define the URL from which we will be loading our data, and last we start observing our Publisher, and `sink` once the request completes and when we receive a value. Here we also do error handling and assign the result to our array of appleStores if the request was successful.
+Let's step through what this class will accomplish for us. First we make this class an `ObservableObject`, this will allow us to define it as a `@StateObject` within SwiftUI, more on that later.  
+ Then we declare the appleStore property as `@Published`, this is very important, as otherwise SwiftUI will not update its View Hierarchy when the contents of the array change.  
+Next we have a `Cancellable` token, this needs to be stored at the class level in order to hold onto our request and make sure it doesn't go away before the request is finished. This is true for any Combine Publisher.  
+Within our `loadStores` function we first cancel any unfinished requests, this is in case the user requests to load multiple times. We also define the URL from which we will be loading our data, and last we start observing our Publisher, and `sink` once the request completes and when we receive a value. Here we also do error handling and assign the result to our array of appleStores when the request was successful.
 
 ## SwiftUI View
 Last but certainly not least we need to setup our SwiftUI view to display and request the data from our `DataManager`:
@@ -77,7 +82,7 @@ struct ListView: View {
 ```
 
 We've already done most of our work, so displaying and requesting the data within this SwiftUI view is very concise, thanks to our `DataManger` which is doing the heavy lifting. Again let's look at what is going in in detail: First we create an instance of our `DataManager` and mark this property with `@StateObject`, this tells SwiftUI to observe updates from this object. Furthermore it allows us to retain this property even after SwiftUI is done rendering the view. This is very important as we don't store this property anywhere else, and it would otherwise be released.  
-Within our body we then list out the names of all the stores we get from the `DataManager`, this is what will be updated and recreated once new data is published. And finally we use the SwiftUI `onAppear` handler to start loading our stores from the network. This will happen when the view first appears, or the user comes back from the background, or we navigate back to this view through a NavigationView. Additionally we could implement a "Refresh" button to allow the user to trigger a manual refresh, however Apple Store data doesn't change that frequently, so it is left out of the example.
+Within our body we then list out the names of all the stores we get from the `DataManager`, this will recreated once new data is published. And finally we use the SwiftUI `onAppear` handler to start loading our stores from the network. This will happen when the view first appears, or the user comes back from the background, or we navigate back to this view through a NavigationView. Additionally we could implement a "Refresh" button to allow the user to trigger a manual refresh, however Apple Store data doesn't change that frequently, so it is left out of the example.
 
 ## Summary
 Leveraging the power of Combine, paired with SwiftUI's state management, we are able to separate view, data, and networking into completely separate components. I'm really enjoying how all these pieces come together and build this architecture that has a single source of truth and can still be reused and injected into subsequent views.
