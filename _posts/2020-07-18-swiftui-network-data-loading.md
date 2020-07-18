@@ -26,7 +26,7 @@ I personally love how easy Combine makes it to create a pipeline to transform yo
 1. We request data from a URL, in case you need to provide a header or body you can also use a `URLRequest`.
 2. We make sure we are on `RunLoop.main` this is important if we want to perform UI updates with the result.
 3. We unpack the data from the response. In case it is `nil` the pipeline will stop and a failure is reported.
-4. We decode our JSON data with the help of `Codable`. If you need more information on that you can check out my [last post](/).
+4. We decode our JSON data with the help of `Codable`. If you need more information on that you can check out my [last post](/swift-decode-json-codable).
 5. Finally we convert this pipeline to `AnyPublisher` which flattens the types and makes our result type easily accessible.
 
 ## Data Manager
