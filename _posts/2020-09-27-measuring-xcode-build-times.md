@@ -69,7 +69,7 @@ Here is an example of what the `JSON` format looks like:
 ```   
 
 ## Summary
-With this data you'll be able to measure how much time is spent waiting for builds per day, it also calculates the average build time for each day, which can be helpful to identify trends. 
-Having the data available as JSON also means you can plug it into more advanced analysis, for example you can create charts to visualize it.
-Personally I've been collecting this data for a few weeks on my work machine now, and asked co-workers to do the same. On busy days we end up waiting for over 1h on builds, with a highest average build time of around 2m. Branch switching certainly contributes to the time, as a clean might be required. I've also discovered that I do more builds on Fridays, compared to other weekdays.
-If you have suggestions to improve the script, feel free to open a pull request.
+With this data you'll be able to measure how much time is spent waiting for builds per day, it also calculates the average build time for each day, which can be helpful to identify trends.  
+Having the data available as JSON also means you can plug it into more advanced analysis, for example you can create charts to visualize it.  
+Personally I've been collecting this data for a few weeks on my work machine now, and asked co-workers to do the same. On busy days we end up waiting for over 1h on builds, with a highest average build time of around 2m. Branch switching certainly contributes to the time, as a clean might be required. I've also discovered that I do more builds on Fridays, compared to other weekdays.  
+If you have suggestions to improve the script, feel free to open a pull request.  
