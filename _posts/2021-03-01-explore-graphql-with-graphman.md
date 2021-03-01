@@ -10,7 +10,7 @@ In this post we will explore an API build on [GraphQL](https://graphql.org). Thi
 We will be working with the [GitHub GraphQL API](https://docs.github.com/en/graphql), if you want to follow along you will need to create a [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
 ## Graphman
-I've recently published a new [macOS](https://apps.apple.com/us/app/graphman/id1546167854) and [iOS](https://apps.apple.com/us/app/graphman/id1546167854) app, that allows you to prototype requests and explore GraphQL APIs. 
+I've recently published a new [macOS](https://apps.apple.com/us/app/graphman/id1546167854) and [iOS](https://apps.apple.com/us/app/graphman-mobile/id1546916084) app, that allows you to prototype requests and explore GraphQL APIs. 
 This post is meant to illustrate how you can use its features and help you get a better understanding of GraphQL.
 
 ## Search
