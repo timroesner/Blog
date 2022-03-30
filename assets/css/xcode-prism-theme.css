@@ -93,6 +93,7 @@ code[class*="language-"]::mozselection {
   color: #FC6A5D;
 }
 
+.token.class-name,
 .token.builtin {
   color: #D0A8FF;
 }
