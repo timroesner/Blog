@@ -76,6 +76,7 @@ code[class*="language-"]::mozselection {
 .token.tag,
 .token.constant,
 .token.symbol,
+.token.other-directive,
 .token.deleted {
   color: #fc5fa3;
 }
@@ -119,8 +120,13 @@ code[class*="language-"]::mozselection {
 
 .token.regex,
 .token.important,
+.token.directive,
 .token.variable {
   color: #fd8f3f;
+}
+
+.token.function-definition {
+  color: #41A1C0;
 }
 
 .token.important,
