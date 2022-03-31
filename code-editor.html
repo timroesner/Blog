@@ -1,0 +1,56 @@
+---
+layout: main
+---
+
+<style type="text/css" media="screen">
+    .container {
+	   margin: 6rem auto;
+	   max-width: 60rem;
+	   text-align: center;
+       display: grid;
+       justify-content: center;
+       justify-items: center;
+    }
+    
+    textarea {
+        height: 15rem;
+        width: 30rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    button {
+        margin-bottom: 0.5rem;
+    }
+</style>
+	
+<div class="container">
+    <textarea></textarea>
+    <button onclick="saveAsPNG()">Save as PNG</button>
+    <pre id="codeblock"><code class="language-swift"></code></pre>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-swift.min.js"></script>
+<script type="text/javascript" src="./assets/scripts/dom-to-image.min.js"></script>
+
+<script>
+    var editor = document.querySelector(".container textarea"),
+    visualizer = document.querySelector(".container code");
+
+    editor.addEventListener("input", (e) => {
+       visualizer.innerHTML = e.target.value.trim();
+       Prism.highlightAll();
+    })
+    
+    function saveAsPNG() {
+        var node = document.getElementById('codeblock');
+        domtoimage.toPng(node)
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = 'codeSnippet.png';
+                link.href = dataUrl;
+                link.click();
+            })
+    }
+</script>
+
