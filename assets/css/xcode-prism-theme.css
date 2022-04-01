@@ -27,14 +27,13 @@ code.highlighter-rouge {
     font-weight: 400 !important;
     color: black;
     background: rgba(229, 239, 245, 0.8);
-    border-radius: 3px
 }
 
 pre[class*=language-] {
   padding:1em;
   margin:.5em 0;
   overflow:auto;
-  border-radius:.3em
+  border-radius:8px
 }
 
 pre[class*="language-"]::selection,
